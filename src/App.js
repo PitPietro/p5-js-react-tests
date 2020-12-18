@@ -9,7 +9,7 @@ export default class App extends Component {
     p5.frameRate(this.fr);
     // use parent to render canvas in this ref (without that p5 render this canvas outside your component)
   };
-  draw = p5 => {
+  draw = (p5) => {
     p5.fill(234, 31, 81);
     p5.noStroke();
     p5.rect(50, 50, 250, 250);
@@ -20,6 +20,10 @@ export default class App extends Component {
   };
 
   render() {
-    return <Sketch setup={this.setup} draw={this.draw} />;
+    return (
+      <>
+        <Sketch setup={this.setup} draw={this.draw} />
+      </>
+    );
   }
 }
